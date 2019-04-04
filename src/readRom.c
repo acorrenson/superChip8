@@ -7,7 +7,7 @@
  * 
  * @return     Number of opCodes readen
  */
-int readRom(unsigned short * memory, char * fileName)
+int readRom(unsigned short * memory, char const * fileName)
 {
   FILE * f = fopen(fileName, "r");
 

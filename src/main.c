@@ -22,17 +22,16 @@ void point(SDL_Renderer * renderer, int x, int y)
   SDL_RenderFillRect(renderer, &rect);
 }
 
-int main() {
-
-  printf("Creating superChip8 window\n");
-
-  // INIT WINDOW
-  SDL_Init(SDL_INIT_VIDEO);
-  SDL_Window* pWindow = NULL;
-  SDL_Renderer* renderer;
+int main(int argc, char const *argv[]) {
 
   // INIT CHIP8 SYSTEM
   unsigned short memory[MEMORY_SIZE];
+
+  // INIT WINDOW
+  printf("Creating superChip8 window\n");
+  SDL_Init(SDL_INIT_VIDEO);
+  SDL_Window* pWindow = NULL;
+  SDL_Renderer* renderer;
 
   pWindow = SDL_CreateWindow(
     "superChip8",
@@ -41,7 +40,6 @@ int main() {
     WIDTH + SQW,
     HEIGHT + SQH,
     SDL_WINDOW_SHOWN);
-
 
   // MAIN PROGRAM
   if ( pWindow ) {
@@ -65,7 +63,10 @@ int main() {
     point(renderer, 2, 2);
     point(renderer, 2, 3);
 
-    readRom(memory, "/Users/arthur/Downloads/chip8-master/roms/15puzzle.rom");
+    printf("--- READING THE ROM %s ---\n", argv[1]);
+    int size = readRom(memory, argv[1]);
+    printMemory(memory, size);
+
 
     SDL_RenderPresent(renderer);
 
