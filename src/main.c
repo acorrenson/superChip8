@@ -4,6 +4,7 @@
 
 // SYSTEM SPECIFICATIONS
 #define MEMORY_SIZE 4096
+#define MEMORY_START 512
 
 #define WIDTH 640
 #define HEIGHT 320
@@ -23,11 +24,19 @@ void point(SDL_Renderer * renderer, int x, int y)
 }
 
 int main(int argc, char const *argv[]) {
-
-  // INIT CHIP8 SYSTEM
+  
+  // -- INIT CHIP8 SYSTEM -- 
+  // memory of the system
   unsigned short memory[MEMORY_SIZE];
+  // pointer to the first readable memory location
+  // the 512 first location are reserved by the system
+  unsigned short * memoryPtr = memory + MEMORY_START;
+  // pointer to the current opCode
+  int pointer = 0;
+  // Number of opCodes loaded
+  int romSize = 0;
 
-  // INIT WINDOW
+  // -- INIT WINDOW --
   printf("Creating superChip8 window\n");
   SDL_Init(SDL_INIT_VIDEO);
   SDL_Window* pWindow = NULL;
@@ -41,7 +50,8 @@ int main(int argc, char const *argv[]) {
     HEIGHT + SQH,
     SDL_WINDOW_SHOWN);
 
-  // MAIN PROGRAM
+  
+  // -- MAIN PROGRAM --
   if ( pWindow ) {
     printf("Successfully created superChip8 window\n");
 
@@ -64,9 +74,8 @@ int main(int argc, char const *argv[]) {
     point(renderer, 2, 3);
 
     printf("--- READING THE ROM %s ---\n", argv[1]);
-    int size = readRom(memory, argv[1]);
-    printMemory(memory, size);
-
+    romSize = readRom(memoryPtr, argv[1]);
+    printMemory(memoryPtr, romSize);
 
     SDL_RenderPresent(renderer);
 
