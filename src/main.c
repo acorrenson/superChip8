@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <SDL2/SDL.h>
 #include "readRom.h"
 
@@ -28,13 +29,19 @@ int main(int argc, char const *argv[]) {
   // -- INIT CHIP8 SYSTEM -- 
   // memory of the system
   unsigned short memory[MEMORY_SIZE];
-  // pointer to the first readable memory location
+  // programCounter to the first readable memory location
   // the 512 first location are reserved by the system
   unsigned short * memoryPtr = memory + MEMORY_START;
-  // pointer to the current opCode
-  int pointer = 0;
+  // programCounter to the current opCode
+  unsigned short programCounter = 0;
   // Number of opCodes loaded
-  int romSize = 0;
+  unsigned short romSize = 0;
+  // 16 8-bit registers
+  unsigned char V[16];
+  // stack for subroutines
+  unsigned char stack[48];
+  unsigned short stackPtr = 0;
+
 
   // -- INIT WINDOW --
   printf("Creating superChip8 window\n");
@@ -75,7 +82,7 @@ int main(int argc, char const *argv[]) {
 
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
-    printMemory(memoryPtr, romSize);
+    // printMemory(memoryPtr, romSize);
 
     SDL_RenderPresent(renderer);
 
@@ -86,15 +93,12 @@ int main(int argc, char const *argv[]) {
     while ( !quit ) {
       while ( SDL_PollEvent(&e) ) {
         if ( e.type == SDL_QUIT ) {
-          // handling SDL_QUIT event
           quit = 1;
         }
         if ( e.type == SDL_KEYDOWN ) {
-          // handling KEYDOWN event
           quit = 1;
         }
         if (e.type == SDL_MOUSEBUTTONDOWN) {
-          // handling MOUSECLICK event
           quit = 1;
         }
       }

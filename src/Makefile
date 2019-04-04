@@ -7,3 +7,6 @@ test: main
 
 main: main.c readRom.c
 	gcc main.c readRom.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2
+
+clean:
+	rm -rf main
