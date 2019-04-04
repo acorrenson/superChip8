@@ -2,6 +2,9 @@
 #include <SDL2/SDL.h>
 #include "readRom.h"
 
+// SYSTEM SPECIFICATIONS
+#define MEMORY_SIZE 4096
+
 #define WIDTH 640
 #define HEIGHT 320
 #define SQW 10  // square width
@@ -22,11 +25,14 @@ void point(SDL_Renderer * renderer, int x, int y)
 int main() {
 
   printf("Creating superChip8 window\n");
-  SDL_Init(SDL_INIT_VIDEO);
 
-  /* Création de la fenêtre */
+  // INIT WINDOW
+  SDL_Init(SDL_INIT_VIDEO);
   SDL_Window* pWindow = NULL;
   SDL_Renderer* renderer;
+
+  // INIT CHIP8 SYSTEM
+  unsigned short memory[MEMORY_SIZE];
 
   pWindow = SDL_CreateWindow(
     "superChip8",
@@ -36,9 +42,9 @@ int main() {
     HEIGHT + SQH,
     SDL_WINDOW_SHOWN);
 
+
+  // MAIN PROGRAM
   if ( pWindow ) {
-    // int a = 1;
-    printf("%X\n", 0xFF << 8 | 0xFF);
     printf("Successfully created superChip8 window\n");
 
     renderer = SDL_CreateRenderer(pWindow, -1, 0);
@@ -59,28 +65,24 @@ int main() {
     point(renderer, 2, 2);
     point(renderer, 2, 3);
 
-
-    readRom();
+    readRom(memory, "/Users/arthur/Downloads/chip8-master/roms/15puzzle.rom");
 
     SDL_RenderPresent(renderer);
 
     SDL_Event e;
     int quit = 0;
 
-    // main loop
+    // LOOP
     while ( !quit ) {
-      // get event(s)
       while ( SDL_PollEvent(&e) ) {
         if ( e.type == SDL_QUIT ) {
           // handling SDL_QUIT event
           quit = 1;
         }
-        
         if ( e.type == SDL_KEYDOWN ) {
           // handling KEYDOWN event
           quit = 1;
         }
-        
         if (e.type == SDL_MOUSEBUTTONDOWN) {
           // handling MOUSECLICK event
           quit = 1;
@@ -88,9 +90,11 @@ int main() {
       }
     }
   } else {
+    // ERROR
     printf("Error ! \n");
   }
   
+  // EXIT
   SDL_Quit();
   return 0;
 }
