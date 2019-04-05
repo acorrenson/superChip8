@@ -38,6 +38,8 @@ int main(int argc, char const *argv[]) {
   unsigned short romSize = 0;
   // 16 8-bit registers
   unsigned char V[16];
+  // adress register (void pointer)
+  unsigned short I = 0;
   // stack for subroutines
   unsigned char stack[48];
   unsigned short stackPtr = 0;
