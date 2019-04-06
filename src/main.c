@@ -102,13 +102,12 @@ int main(int argc, char const *argv[]) {
         if ( e.type == SDL_QUIT ) {
           quit = 1;
         }
-        if ( e.type == SDL_KEYDOWN ) {
-          quit = 1;
-        }
         if (e.type == SDL_MOUSEBUTTONDOWN) {
           quit = 1;
         }
       }
+      // Read instructions at 60Hz
+      SDL_Delay(FRAMES_PER_SECOND);
     }
   } else {
     // ERROR
