@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <math.h>
 #include "readRom.h"
 
 // SYSTEM SPECIFICATIONS
@@ -25,6 +26,45 @@ void point(SDL_Renderer * renderer, int x, int y)
   SDL_RenderFillRect(renderer, &rect);
 }
 
+/**
+ * @brief      Display a character to the screen
+ *
+ * @param      renderer  The renderer
+ * @param      table     The character table
+ * @param[in]  c         The number of the character to display (between 0 and 15)
+ * @param[in]  x         X position
+ * @param[in]  y         Y position
+ */
+void disp(SDL_Renderer * renderer, unsigned char table[16][5], int c, int x, int y)
+{
+  unsigned char code;
+  unsigned char test;
+
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 4; j++) {
+      code = table[c][i] >> 4;
+      test = (unsigned char) pow(2, j);
+      if ( (code & test) ==  test )
+        point(renderer, 1 + 4 - j + x, 1 + i + y);
+    }
+  }
+}
+
+
+/**
+ * @brief      Display all possible characters to the screen
+ *
+ * @param      renderer  The renderer
+ * @param      table     The characters table
+ */
+void dispAllChar(SDL_Renderer * renderer, unsigned char table[16][5])
+{
+  for (int i = 0; i < 16; i++) {
+    disp(renderer, table, i, (i%4)*5, (i/4)*6);
+  }
+}
+
+
 int main(int argc, char const *argv[]) {
   
   // -- INIT CHIP8 SYSTEM -- 
@@ -45,6 +85,24 @@ int main(int argc, char const *argv[]) {
   unsigned char stack[48];
   unsigned short stackPtr = 0;
 
+  unsigned char charTable[16][5] = {
+    {0xF0, 0x90, 0x90, 0x90, 0xF0}, // 0
+    {0x20, 0x60, 0x20, 0x20, 0x70}, // 1
+    {0xF0, 0x10, 0xF0, 0x80, 0xF0}, // 2
+    {0xF0, 0x10, 0xF0, 0x10, 0xF0}, // 3
+    {0x90, 0x90, 0xF0, 0x10, 0x10}, // 4
+    {0xF0, 0x80, 0xF0, 0x10, 0xF0}, // 5
+    {0xF0, 0x80, 0xF0, 0x90, 0xF0}, // 6
+    {0xF0, 0x10, 0x20, 0x40, 0x40}, // 7
+    {0xF0, 0x90, 0xF0, 0x90, 0xF0}, // 8
+    {0xF0, 0x90, 0xF0, 0x10, 0xF0}, // 9
+    {0xF0, 0x90, 0xF0, 0x90, 0x90}, // A
+    {0xE0, 0x90, 0xE0, 0x90, 0xE0}, // B
+    {0xF0, 0x80, 0x80, 0x80, 0xF0}, // C
+    {0xE0, 0x90, 0x90, 0x90, 0xE0}, // D
+    {0xF0, 0x80, 0xF0, 0x80, 0xF0}, // E
+    {0xF0, 0x80, 0xF0, 0x80, 0x80}  // E
+  };
 
   // -- INIT WINDOW --
   printf("Creating superChip8 window\n");
@@ -69,19 +127,7 @@ int main(int argc, char const *argv[]) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    // draw a 0 to the screen
-    point(renderer, 0, 0);
-    point(renderer, 0, 1);
-    point(renderer, 0, 2);
-    point(renderer, 0, 3);
-
-    point(renderer, 1, 0);
-    point(renderer, 1, 3);
-
-    point(renderer, 2, 0);
-    point(renderer, 2, 1);
-    point(renderer, 2, 2);
-    point(renderer, 2, 3);
+    dispAllChar(renderer, charTable);
 
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
