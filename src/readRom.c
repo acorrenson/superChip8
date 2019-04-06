@@ -41,11 +41,22 @@ void printMemory(unsigned short * memory, int size)
   }
 }
 
+/**
+ * @brief      Pretty print an opCode and its assembly in stdin
+ *
+ * @param      instruction  The assembly instruction
+ * @param[in]  opCode       The operation code
+ */
 void printOpCode(char * instruction, unsigned short const opCode)
 {
   printf("OP_CODE : \033[35m%04X\033[0m  |  ASEMBLY : \033[35m%s\033[0m\n", opCode, instruction);
 }
 
+/**
+ * @brief      Convert an opCode into assembly
+ *
+ * @param[in]  opCode  The operation code
+ */
 void desasembler(unsigned short const opCode)
 {
   if(opCode >> 12 == 0) {
