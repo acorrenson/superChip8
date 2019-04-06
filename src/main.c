@@ -109,6 +109,9 @@ int main(int argc, char const *argv[]) {
   unsigned short delayTimer = 0;
   unsigned short soundTimer = 0;
 
+  unsigned char keyBoardState[16] =
+    {0, 0 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
   unsigned char charTable[16][5] = {
     {0xF0, 0x90, 0x90, 0x90, 0xF0}, // 0
     {0x20, 0x60, 0x20, 0x20, 0x70}, // 1
