@@ -59,14 +59,14 @@ void printOpCode(char * instruction, unsigned short const opCode)
  */
 void desasembler(unsigned short const opCode)
 {
-  if(opCode >> 12 == 0) {
-    printOpCode("DEPRECATED SYS CALL", opCode);
-  }
-  else if(opCode == 0x00E0) {
+  if(opCode == 0x00E0) {
     printOpCode("CLS", opCode);
   }
   else if(opCode == 0x00EE) {
     printOpCode("RET", opCode);
+  }
+  else if(opCode >> 12 == 0) {
+    printOpCode("DEPRECATED SYS CALL", opCode);
   }
   else if(opCode >> 12 == 1) {
     printOpCode("JP", opCode);

@@ -106,6 +106,7 @@ int main(int argc, char const *argv[]) {
           quit = 1;
         }
       }
+
       // Read instructions at 60Hz
       SDL_Delay(FRAMES_PER_SECOND);
     }
