@@ -11,6 +11,7 @@
 #define HEIGHT 320
 #define SQW 10  // square width
 #define SQH 10  // square height
+#define FRAMES_PER_SECOND 60
 
 void point(SDL_Renderer * renderer, int x, int y)
 {
@@ -85,9 +86,10 @@ int main(int argc, char const *argv[]) {
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
     // printMemory(memoryPtr, romSize);
+    printf("rom size : %d\n", romSize);
 
-    for(int i=0; i < romSize; i++)
-      desasembler(memoryPtr[i]);
+    // for(int i=0; i < romSize; i++)
+      // desasembler(memoryPtr[i]);
 
     SDL_RenderPresent(renderer);
 
