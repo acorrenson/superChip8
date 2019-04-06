@@ -86,6 +86,9 @@ int main(int argc, char const *argv[]) {
     romSize = readRom(memoryPtr, argv[1]);
     // printMemory(memoryPtr, romSize);
 
+    for(int i=0; i < romSize; i++)
+      desasembler(memoryPtr[i]);
+
     SDL_RenderPresent(renderer);
 
     SDL_Event e;
