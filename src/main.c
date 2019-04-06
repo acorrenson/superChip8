@@ -14,6 +14,13 @@
 #define SQH 10  // square height
 #define FRAMES_PER_SECOND 60
 
+/**
+ * @brief      Draw a point to the screen
+ *
+ * @param      renderer  The renderer
+ * @param[in]  x         X Position
+ * @param[in]  y         Y Position
+ */
 void point(SDL_Renderer * renderer, int x, int y)
 {
   // Draw a point to the screen
@@ -50,7 +57,6 @@ void disp(SDL_Renderer * renderer, unsigned char table[16][5], int c, int x, int
   }
 }
 
-
 /**
  * @brief      Display all possible characters to the screen
  *
@@ -64,6 +70,20 @@ void dispAllChar(SDL_Renderer * renderer, unsigned char table[16][5])
   }
 }
 
+/**
+ * @brief      Update all the timers of the chip8 system
+ *
+ * @param      delayTimer  The delay timer
+ * @param      soundTimer  The sound timer
+ */
+void updateTimers(unsigned short * delayTimer, unsigned short * soundTimer)
+{
+  if (*delayTimer > 0)
+    --*delayTimer;
+
+  if (*soundTimer > 0)
+    --*soundTimer;
+}
 
 int main(int argc, char const *argv[]) {
   
@@ -84,6 +104,10 @@ int main(int argc, char const *argv[]) {
   // stack for subroutines
   unsigned char stack[48];
   unsigned short stackPtr = 0;
+
+  // timers
+  unsigned short delayTimer = 0;
+  unsigned short soundTimer = 0;
 
   unsigned char charTable[16][5] = {
     {0xF0, 0x90, 0x90, 0x90, 0xF0}, // 0
@@ -129,6 +153,7 @@ int main(int argc, char const *argv[]) {
 
     dispAllChar(renderer, charTable);
 
+    // ==== TEST ZONE ================================
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
     printf("rom size : %d\n", romSize);
@@ -138,6 +163,7 @@ int main(int argc, char const *argv[]) {
     }
 
     SDL_RenderPresent(renderer);
+    // ===============================================
 
     SDL_Event e;
     int quit = 0;
