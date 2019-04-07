@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <SDL2/SDL.h>
 #include "instructions.h"
 
 /**
@@ -47,7 +48,13 @@ void printMemory(unsigned short * memory, int size)
  *
  * @param[in]  opCode  The operation code
  */
-void desasembler(unsigned short const opCode)
+void desasembler(unsigned short const opCode, 
+                 unsigned short *pProgramCounter, 
+                 unsigned char V[16], 
+                 unsigned short *pI, 
+                 unsigned char stack[48], 
+                 unsigned short *pStackPtr, 
+                 SDL_Renderer *renderer)
 {
   if(opCode == 0x00E0) {
     CLS(opCode);
