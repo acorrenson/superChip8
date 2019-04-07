@@ -198,7 +198,7 @@ int main(int argc, char const *argv[]) {
     printf("rom size : %d\n", romSize);
 
     for(int i=0; i < romSize; i++) {
-      // desasembler(memoryPtr[i]);
+      desasembler(memoryPtr[i]);
     }
 
     SDL_RenderPresent(renderer);
