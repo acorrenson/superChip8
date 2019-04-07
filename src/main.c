@@ -53,6 +53,17 @@ int main(int argc, char const *argv[]) {
     {0xF0, 0x80, 0xF0, 0x80, 0x80}  // E
   };
 
+  unsigned char screen[32][64];
+
+  // filling memory with standard sprites
+  for (int i = 0; i < 16; i++)
+  {
+    for (int j = 0; j < 5; j++)
+    {
+      memory[i*5+j] = charTable[i][j];
+    }
+  }
+
   // -- INIT WINDOW --
   printf("Creating superChip8 window\n");
   SDL_Init(SDL_INIT_VIDEO);
@@ -79,16 +90,14 @@ int main(int argc, char const *argv[]) {
     printf("Successfully created superChip8 window\n");
 
     renderer = SDL_CreateRenderer(pWindow, -1, 0);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    dispAllChar(renderer, charTable);
+    clearScreen(renderer, screen);
 
 
     // ==== TEST ZONE ================================
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
     printf("rom size : %d\n", romSize);
-
+    // printMemory(memory, 16*5);
     // ===============================================
 
     // LOOP
@@ -101,15 +110,23 @@ int main(int argc, char const *argv[]) {
       }
 
       setKeyBoardState(state, keyBoardState);
-
+      
       opCode = getOpCodeAt(memoryPtr, programCounter);
       desasembler(opCode, &programCounter, V, &I, stack, &stackPtr, 
-        renderer, keyBoardState, memory, &delayTimer, &soundTimer);
+        renderer, screen, keyBoardState, memory, &delayTimer, &soundTimer);
       
+      renderAll(renderer, screen);
       SDL_RenderPresent(renderer);
 
+      for (int i = 0; i < 32; i++) {
+        for (int j = 0; j < 64; j++){
+          printf("%d ", screen[i][j]);
+        }
+        printf("\n");
+      }
+
       // Read instructions at 60Hz
-      SDL_Delay(FRAMES_PER_SECOND);
+      SDL_Delay(500);
     }
   } else {
     // ERROR

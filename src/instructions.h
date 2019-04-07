@@ -1,4 +1,4 @@
-void CLS(unsigned short const opCode, unsigned char *pProgramCounter, SDL_Renderer *renderer);
+void CLS(unsigned short const opCode, unsigned char *pProgramCounter, SDL_Renderer *renderer, unsigned char screen[32][64]);
 
 void RET(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char stack[48], unsigned short *pStack);
 
@@ -42,7 +42,8 @@ void JP_V0_addr(unsigned short const opCode, unsigned char *pProgramCounter, uns
 
 void RND_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16]);
 
-void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char * pProgramCounter, unsigned char V[16], unsigned short *pI);
+void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char * pProgramCounter, unsigned char V[16], unsigned short *pI,
+  unsigned char screen[32][64], unsigned char memory[4096]);
 
 void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned char keyboardState[16]);
 

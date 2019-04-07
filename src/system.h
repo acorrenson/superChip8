@@ -8,7 +8,10 @@
 #define SQH 10  // square height
 #define FRAMES_PER_SECOND 60
 
+void clearScreen(SDL_Renderer * renderer, unsigned char screen[32][64]);
 void point(SDL_Renderer * renderer, int x, int y);
+void erase(SDL_Renderer * renderer, int x, int y);
+void renderAll(SDL_Renderer *renderer, unsigned char screen[32][64]);
 void disp(SDL_Renderer * renderer, unsigned char table[16][5], int c, int x, int y);
 void dispAllChar(SDL_Renderer * renderer, unsigned char table[16][5]);
 void updateTimers(unsigned short * delayTimer, unsigned short * soundTimer);

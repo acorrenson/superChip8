@@ -44,7 +44,7 @@ int readRom(unsigned char * memory, char const * fileName)
 void printMemory(unsigned char * memory, int size)
 {
   for (int j = 0; j < size; j++) {
-    printf("opCode n° %d: %04X\n", j+1, memory[j]);
+    printf("mem slot n° %d: %02X\n", j+1, memory[j]);
   }
 }
 
@@ -60,13 +60,14 @@ void desasembler(unsigned short const opCode,
                  unsigned char stack[48], 
                  unsigned short *pStackPtr,
                  SDL_Renderer *renderer,
+                 unsigned char screen[32][64],
                  unsigned char keyBoardState[16],
                  unsigned char memory[4096],
                  unsigned short * pDelayTimer,
                  unsigned short * pSoundTimer)
 {
   if(opCode == 0x00E0) {
-    CLS(opCode, pProgramCounter, renderer);
+    CLS(opCode, pProgramCounter, renderer, screen);
   }
   else if(opCode == 0x00EE) {
     RET(opCode, pProgramCounter, stack, pStackPtr);
@@ -138,7 +139,7 @@ void desasembler(unsigned short const opCode,
     RND_Vx_byte(opCode, pProgramCounter, V);
   }
   else if (opCode >> 12 == 0xD) {
-    DRW_Vx_Vy_nibble(opCode, pProgramCounter, V, pI);
+    DRW_Vx_Vy_nibble(opCode, pProgramCounter, V, pI, screen, memory);
   }
   else if (opCode >> 12 == 0xE)
   {

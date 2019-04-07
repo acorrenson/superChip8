@@ -6,13 +6,12 @@
 
 // -- CHIP-8 INSTRUCTIONS --
 
-void CLS(unsigned short const opCode, unsigned char *pProgramCounter, SDL_Renderer *renderer)
+void CLS(unsigned short const opCode, unsigned char *pProgramCounter, SDL_Renderer *renderer, unsigned char screen[32][64])
 {
     // Print assembler code
     printf("%04X - CLS\n", opCode);
     // Op
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
+    clearScreen(renderer, screen);
     *pProgramCounter += 2;
 }
 
@@ -315,16 +314,37 @@ void RND_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, un
     *pProgramCounter += 2;
 }
 
-void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI)
+void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16],
+    unsigned short *pI, unsigned char screen[32][64], unsigned char memory[4096])
 {
     // Filter
-    unsigned char Vx, Vy, nibble;
+    unsigned char Vx, Vy, nibble, test, code, col = 0;
     Vx = (opCode & 0x0F00) >> 8;
     Vy = (opCode & 0x00F0) >> 4;
     nibble = opCode & 0x000F;
     // Print assembler code
     printf("%04X - DRW   V%u, V%u, %u\n", opCode, Vx, Vy, nibble);
     // Op
+    for (int i = 0; i < nibble; i++) {
+        for (int j = 0; j < 8; j++) {
+            code = memory[*pI+i];
+            test = (unsigned char) pow(2, j);
+            if ( (code & test) ==  test ) {
+                if ( screen[V[Vy]][V[Vx]] == 0 ) {
+                    screen[(i + V[Vy])%32][(8 - j + V[Vx])%64] = 1;
+                } else {
+                    screen[(i + V[Vy])%32][(8 - j + V[Vx])%64] = 0;
+                    col = 1;
+                }
+            }
+        }
+    }
+
+    if ( col )
+        V[15] = 1;
+    else
+        V[15] = 0;
+
     *pProgramCounter += 2;
     
 }

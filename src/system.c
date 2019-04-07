@@ -3,6 +3,21 @@
 #include <SDL2/SDL.h>
 #include "system.h"
 
+void clearScreen(SDL_Renderer * renderer, unsigned char screen[32][64])
+{
+  for (int i = 0; i < 32; i++)
+  {
+    for (int j = 0; j < 64; j++)
+    {
+      screen[i][j] = 0;
+    }
+  }
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_RenderClear(renderer);
+}
+
+
+
 /**
  * @brief      Draw a point to the screen
  *
@@ -21,6 +36,34 @@ void point(SDL_Renderer * renderer, int x, int y)
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
   SDL_RenderFillRect(renderer, &rect);
 }
+
+void erase(SDL_Renderer * renderer, int x, int y)
+{
+  // Draw a point to the screen
+  SDL_Rect rect;
+  rect.x = (x+1)*SQW;
+  rect.y = (y+1)*SQH;
+  rect.h = SQH;
+  rect.w = SQW;
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_RenderFillRect(renderer, &rect);
+}
+
+
+void renderAll(SDL_Renderer *renderer, unsigned char screen[32][64])
+{
+  for (int i = 0; i < 32; ++i)
+  {
+    for (int j = 0; j < 64; ++j)
+    {
+      if (screen[i][j] == 1)
+        point(renderer, j+1, i+1);
+      else
+        erase(renderer, j+1, i+1);
+    }
+  }
+}
+
 
 /**
  * @brief      Display a character to the screen
