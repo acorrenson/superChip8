@@ -6,10 +6,10 @@ test: main
 	./main ../roms/15puzzle.rom
 
 auto_build:
-	gcc main.c readRom.c -o main -l SDL2
+	gcc main.c readRom.c -o main -l SDL2 -lm
 
 main: main.c readRom.c
-	gcc main.c readRom.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2
+	gcc main.c readRom.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2 -lm
 
 clean:
 	rm -rf main
