@@ -186,8 +186,8 @@ void ADD_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsi
     // Print assembler code
     printf("%04X - ADD   V%u, V%u\n", opCode, Vx, Vy);
     // Op
-    unsigned short temp;
-    temp = V[Vx] + V[Vy];
+    int temp;
+    temp = (int) V[Vx] + (int) V[Vy];
     if (temp > 255)
         V[15] = 1;
     V[Vx] = (temp & 0x00FF);
@@ -326,14 +326,15 @@ void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char *pProgramCounte
     printf("%04X - DRW   V%u, V%u, %u\n", opCode, Vx, Vy, nibble);
     // Op
     for (int i = 0; i < nibble; i++) {
-        for (int j = 0; j < 8; j++) {
+        for (int j = 7; j >= 0; j--) {
             code = memory[*pI+i];
             test = (unsigned char) pow(2, j);
             if ( (code & test) ==  test ) {
-                if ( screen[V[Vy]][V[Vx]] == 0 ) {
-                    screen[(i + V[Vy])%32][(8 - j + V[Vx])%64] = 1;
+                if ( screen[(i + V[Vy])%32][(7 - j + V[Vx])%64] == 0 ) {
+                    printf("%d %d\n", i, 7-j);
+                    screen[(i + V[Vy])%32][(7 - j + V[Vx])%64] = 1;
                 } else {
-                    screen[(i + V[Vy])%32][(8 - j + V[Vx])%64] = 0;
+                    screen[(i + V[Vy])%32][(7 - j + V[Vx])%64] = 0;
                     col = 1;
                 }
             }

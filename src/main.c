@@ -74,8 +74,8 @@ int main(int argc, char const *argv[]) {
     "superChip8",
     SDL_WINDOWPOS_UNDEFINED,
     SDL_WINDOWPOS_UNDEFINED,
-    WIDTH + SQW,
-    HEIGHT + SQH,
+    WIDTH + 2*SQW,
+    HEIGHT + 2*SQH,
     SDL_WINDOW_SHOWN);
 
   // state of the keyboard
