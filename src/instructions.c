@@ -6,17 +6,17 @@
 
 // -- CHIP-8 INSTRUCTIONS --
 
-void CLS(unsigned short const opCode, unsigned short *pProgramCounter, SDL_Renderer *renderer)
+void CLS(unsigned short const opCode, unsigned char *pProgramCounter, SDL_Renderer *renderer)
 {
     // Print assembler code
     printf("%04X - CLS\n", opCode);
     // Op
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void RET(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char stack[48], unsigned short *pStack)
+void RET(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char stack[48], unsigned short *pStack)
 {
     // Print assembler code
     printf("%04X - RET\n", opCode);
@@ -25,7 +25,7 @@ void RET(unsigned short const opCode, unsigned short *pProgramCounter, unsigned 
     -- *pStack;
 }
 
-void JP_addr(unsigned short const opCode, unsigned short *pProgramCounter)
+void JP_addr(unsigned short const opCode, unsigned char *pProgramCounter)
 {
     // Filter
     unsigned short addr;
@@ -36,7 +36,7 @@ void JP_addr(unsigned short const opCode, unsigned short *pProgramCounter)
     *pProgramCounter = addr;
 }
 
-void CALL_addr(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char stack[48], unsigned short *pStack)
+void CALL_addr(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char stack[48], unsigned short *pStack)
 {
     // Filter
     unsigned short addr;
@@ -49,7 +49,7 @@ void CALL_addr(unsigned short const opCode, unsigned short *pProgramCounter, uns
     *pProgramCounter = addr;
 }
 
-void SE_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SE_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     //Filter
     unsigned char Vx;
@@ -60,12 +60,12 @@ void SE_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, un
     printf("%04X - SE    V%u, #%x\n", opCode, Vx, kk);
     // Op
     if (V[Vx] == kk)
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *pProgramCounter;
+        *pProgramCounter += 2;
 }
 
-void SNE_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SNE_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -76,12 +76,12 @@ void SNE_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, u
     printf("%04X - SNE   V%u, #%x\n", opCode, Vx, kk);
     // Op
     if (V[Vx] != kk)
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *pProgramCounter;
+        *pProgramCounter += 2;
 }
 
-void SE_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SE_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -91,12 +91,12 @@ void SE_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - SE    V%u, V%u\n", opCode, Vx, Vy);
     // Op
     if (V[Vx] == V[Vy])
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *pProgramCounter;
+        *pProgramCounter += 2;
 }
 
-void LD_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void LD_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -107,10 +107,10 @@ void LD_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, un
     printf("%04X - LD    V%u, #%x\n", opCode, Vx, kk);
     // Op
     V[Vx] = kk;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void ADD_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void ADD_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -121,10 +121,10 @@ void ADD_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, u
     printf("%04X - ADD   V%u, #%x\n", opCode, Vx, kk);
     // Op
     V[Vx] += kk;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void LD_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -134,10 +134,10 @@ void LD_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - LD    V%u, V%u\n", opCode, Vx, Vy);
     // Op
     V[Vx] = V[Vy];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void OR_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void OR_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -147,10 +147,10 @@ void OR_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - OR    V%u, V%u\n", opCode, Vx, Vy);
     // Op
     V[Vx] = V[Vx] | V[Vy];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void AND_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void AND_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -161,10 +161,10 @@ void AND_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, uns
     // Op
     // var: V
     V[Vx] = V[Vx] & V[Vy];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void XOR_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void XOR_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -175,10 +175,10 @@ void XOR_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, uns
     // Op
     // var: V
     V[Vx] = V[Vx] ^ V[Vy];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void ADD_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void ADD_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -192,10 +192,10 @@ void ADD_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, uns
     if (temp > 255)
         V[15] = 1;
     V[Vx] = (temp & 0x00FF);
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void SUB_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SUB_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -209,10 +209,10 @@ void SUB_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, uns
     else
         V[15] = 0;
     V[Vx] = V[Vx] - V[Vy];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void SHR_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SHR_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -225,10 +225,10 @@ void SHR_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsign
     else
         V[15] = 0;
     V[Vx] = (V[Vx] >> 1) + V[15];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void SUBN_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SUBN_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx, Vy;
@@ -242,10 +242,10 @@ void SUBN_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, un
     else
         V[15] = 0;
     V[Vx] = V[Vy] - V[Vx];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void SHL_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SHL_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -258,10 +258,10 @@ void SHL_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsign
     else
         V[15] = 0;
     V[Vx] = V[Vx] << 1;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void SNE_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void SNE_Vx_Vy(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {  
     // Filter
     unsigned char Vx, Vy;
@@ -271,12 +271,12 @@ void SNE_Vx_Vy(unsigned short const opCode, unsigned short *pProgramCounter, uns
     printf("%04X - SNE   V%u, V%u\n", opCode, Vx, Vy);
     // Op
     if (V[Vx] != V[Vy])
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *pProgramCounter;
+        *pProgramCounter += 2;
 }
 
-void LD_I_addr(unsigned short const opCode, unsigned short *pProgramCounter, unsigned short *pI)
+void LD_I_addr(unsigned short const opCode, unsigned char *pProgramCounter, unsigned short *pI)
 {
     // Filter
     unsigned short addr;
@@ -285,10 +285,10 @@ void LD_I_addr(unsigned short const opCode, unsigned short *pProgramCounter, uns
     printf("%04X - LD    I, #%04X\n", opCode, addr);
     // Op
     *pI = addr;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void JP_V0_addr(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void JP_V0_addr(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned short addr;
@@ -299,7 +299,7 @@ void JP_V0_addr(unsigned short const opCode, unsigned short *pProgramCounter, un
     *pProgramCounter = addr + V[0];
 }
 
-void RND_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16])
+void RND_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16])
 {
     // Filter
     unsigned char Vx;
@@ -309,12 +309,13 @@ void RND_Vx_byte(unsigned short const opCode, unsigned short *pProgramCounter, u
     // Print assembler code
     printf("%04X - RND   V%u, #%x\n", opCode, Vx, kk);
     // Op
-    unsigned short r = srand(time(NULL)) % 256;
+    srand(time(NULL));
+    unsigned short r = rand() % 256;
     V[Vx] = r & kk;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned short * pProgramCounter, unsigned char V[16], unsigned short *pI)
+void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI)
 {
     // Filter
     unsigned char Vx, Vy, nibble;
@@ -324,10 +325,11 @@ void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned short * pProgramCoun
     // Print assembler code
     printf("%04X - DRW   V%u, V%u, %u\n", opCode, Vx, Vy, nibble);
     // Op
+    *pProgramCounter += 2;
     
 }
 
-void SKP_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
+void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -336,12 +338,12 @@ void SKP_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsign
     printf("%04X - SKP   V%u\n", opCode, Vx);
     // Op
     if (keyboardState[V[Vx]])
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *programCounter;
+        *pProgramCounter += 2;
 }
 
-void SKNP_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
+void SKNP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -350,12 +352,12 @@ void SKNP_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsig
     printf("%04X - SKNP  V%u\n", opCode, Vx);
     // Op
     if (!keyboardState[V[Vx]])
-        *pProgramCounter += 2;
+        *pProgramCounter += 4;
     else
-        ++ *programCounter;
+        *pProgramCounter += 2;
 }
 
-void LD_Vx_DT(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer)
+void LD_Vx_DT(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer)
 {
     // Filter
     unsigned char Vx;
@@ -364,10 +366,10 @@ void LD_Vx_DT(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - LD    V%u, DT\n", opCode, Vx);
     // Op
     V[Vx] = *pDelayTimer;
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_Vx_K(unsigned short const opCode, unsigned short *pProgramCounter, unsigned short keyboardState)
+void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -379,12 +381,12 @@ void LD_Vx_K(unsigned short const opCode, unsigned short *pProgramCounter, unsig
         if (keyboardState[i]) {
             V[Vx] = i;
             i = 16;
-            ++ *pProgramCounter;
+            *pProgramCounter += 2;
         }
     }
 }
 
-void LD_DT_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer)
+void LD_DT_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer)
 {
     // Filter
     unsigned char Vx;
@@ -393,10 +395,10 @@ void LD_DT_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - LD    DT, V%u\n", opCode, Vx);
     // Op
     *pDelayTimer = V[Vx];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_ST_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pSoundTimer)
+void LD_ST_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pSoundTimer)
 {
     // Filter
     unsigned char Vx;
@@ -405,10 +407,10 @@ void LD_ST_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - LD    ST, V%u\n", opCode, Vx);
     // Op
     *pSoundTimer = V[Vx];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void ADD_I_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pI)
+void ADD_I_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI)
 {
     // Filter
     unsigned char Vx;
@@ -417,10 +419,10 @@ void ADD_I_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsi
     printf("%04X - ADD   I, V%u\n", opCode, Vx);
     // Op
     *pI += V[Vx];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_F_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pI)
+void LD_F_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI)
 {
     // Filter
     unsigned char Vx;
@@ -429,10 +431,10 @@ void LD_F_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsig
     printf("%04X - LD    F, V%u\n", opCode, Vx);
     // Op
     *pI = V[Vx];
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_B_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
+void LD_B_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
 {
     // Filter
     unsigned char Vx;
@@ -440,13 +442,13 @@ void LD_B_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsig
     // Print assembler code
     printf("%04X - LD    B, V%u\n", opCode, Vx);
     // Op
-    memory[I]     = V[Vx] / 100;
-    memory[I + 1] = (V[Vx] / 10) % 10;
-    memory[I + 2] = (V[Vx] % 100) % 10;
-    ++ *pProgramCounter;
+    memory[*pI]     = V[Vx] / 100;
+    memory[*pI + 1] = (V[Vx] / 10) % 10;
+    memory[*pI + 2] = (V[Vx] % 100) % 10;
+    *pProgramCounter += 2;
 }
 
-void LD_I_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
+void LD_I_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
 {
     // Filter
     unsigned char Vx;
@@ -454,13 +456,13 @@ void LD_I_Vx(unsigned short const opCode, unsigned short *pProgramCounter, unsig
     // Print assembler code
     printf("%04X - LD    [I], V%u\n", opCode, Vx);
     // Op
-    for (int i = 0; i <= Vx) {
+    for (int i = 0; i <= Vx; i++) {
         memory[*pI+i] = V[i];
     }
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }
 
-void LD_Vx_I(unsigned short const opCode, unsigned short *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
+void LD_Vx_I(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pI, unsigned short memory[4096])
 {
     // Filter
     unsigned char Vx;
@@ -468,8 +470,8 @@ void LD_Vx_I(unsigned short const opCode, unsigned short *pProgramCounter, unsig
     // Print assembler code
     printf("%04X - LD    V%u, [I]\n", opCode, Vx);
     // Op
-    for (int i = 0; i <= Vx) {
+    for (int i = 0; i <= Vx; i++) {
         V[i] = memory[*pI+i];
     }
-    ++ *pProgramCounter;
+    *pProgramCounter += 2;
 }

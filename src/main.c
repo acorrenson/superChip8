@@ -9,12 +9,12 @@ int main(int argc, char const *argv[]) {
   
   // -- INIT CHIP8 SYSTEM -- 
   // memory of the system
-  unsigned short memory[MEMORY_SIZE];
+  unsigned char memory[MEMORY_SIZE];
   // programCounter to the first readable memory location
   // the 512 first location are reserved by the system
-  unsigned short * memoryPtr = memory + MEMORY_START;
+  unsigned char * memoryPtr = memory + MEMORY_START;
   // programCounter to the current opCode
-  unsigned short programCounter = 0;
+  unsigned char programCounter = 0;
   // Number of opCodes loaded
   unsigned short romSize = 0;
   // 16 8-bit registers
@@ -24,6 +24,8 @@ int main(int argc, char const *argv[]) {
   // stack for subroutines
   unsigned char stack[48];
   unsigned short stackPtr = 0;
+
+  unsigned short opCode;
 
   // timers
   unsigned short delayTimer = 0;
@@ -87,11 +89,6 @@ int main(int argc, char const *argv[]) {
     romSize = readRom(memoryPtr, argv[1]);
     printf("rom size : %d\n", romSize);
 
-    for(int i=0; i < romSize; i++) {
-      desasembler(memoryPtr[i]);
-    }
-
-    SDL_RenderPresent(renderer);
     // ===============================================
 
     // LOOP
@@ -104,6 +101,12 @@ int main(int argc, char const *argv[]) {
       }
 
       setKeyBoardState(state, keyBoardState);
+
+      opCode = getOpCodeAt(memoryPtr, programCounter);
+      desasembler(opCode, &programCounter, V, &I, stack, &stackPtr, 
+        renderer, keyBoardState, memory, &delayTimer, &soundTimer);
+      
+      SDL_RenderPresent(renderer);
 
       // Read instructions at 60Hz
       SDL_Delay(FRAMES_PER_SECOND);
