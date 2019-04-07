@@ -45,13 +45,13 @@ void RND_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, un
 void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char * pProgramCounter, unsigned char V[16], unsigned short *pI,
   unsigned char screen[32][64], unsigned char memory[4096]);
 
-void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned char keyboardState[16]);
+void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16]);
 
-void SKNP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned char keyboardState[16]);
+void SKNP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16]);
 
 void LD_Vx_DT(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer);
 
-void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned char keyboardState[16]);
+void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16]);
 
 void LD_DT_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short *pDelayTimer);
 

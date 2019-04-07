@@ -31,7 +31,7 @@ int main(int argc, char const *argv[]) {
   unsigned short delayTimer = 0;
   unsigned short soundTimer = 0;
 
-  unsigned char keyBoardState[16] =
+  int keyBoardState[16] =
     {0, 0 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
   unsigned char charTable[16][5] = {
@@ -97,7 +97,7 @@ int main(int argc, char const *argv[]) {
     printf("--- READING THE ROM %s ---\n", argv[1]);
     romSize = readRom(memoryPtr, argv[1]);
     printf("rom size : %d\n", romSize);
-    // printMemory(memory, 16*5);
+    
     // ===============================================
 
     // LOOP
@@ -112,21 +112,18 @@ int main(int argc, char const *argv[]) {
       setKeyBoardState(state, keyBoardState);
       
       opCode = getOpCodeAt(memoryPtr, programCounter);
+
       desasembler(opCode, &programCounter, V, &I, stack, &stackPtr, 
         renderer, screen, keyBoardState, memory, &delayTimer, &soundTimer);
-      
+
       renderAll(renderer, screen);
       SDL_RenderPresent(renderer);
 
-      for (int i = 0; i < 32; i++) {
-        for (int j = 0; j < 64; j++){
-          printf("%d ", screen[i][j]);
-        }
-        printf("\n");
-      }
+      updateTimers(&delayTimer, &soundTimer);
 
       // Read instructions at 60Hz
-      SDL_Delay(500);
+      SDL_Delay(FRAMES_PER_SECOND);
+
     }
   } else {
     // ERROR

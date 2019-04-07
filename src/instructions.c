@@ -100,7 +100,7 @@ void LD_Vx_byte(unsigned short const opCode, unsigned char *pProgramCounter, uns
     // Filter
     unsigned char Vx;
     unsigned short kk;
-    Vx = (opCode & 0x0F00) >> 8; 
+    Vx = (opCode & 0x0F00) >> 8;
     kk = opCode & 0x00FF;
     // Print assembler code
     printf("%04X - LD    V%u, #%x\n", opCode, Vx, kk);
@@ -349,7 +349,7 @@ void DRW_Vx_Vy_nibble(unsigned short const opCode, unsigned char *pProgramCounte
     
 }
 
-void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
+void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -363,7 +363,7 @@ void SKP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigne
         *pProgramCounter += 2;
 }
 
-void SKNP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
+void SKNP_Vx(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -389,7 +389,7 @@ void LD_Vx_DT(unsigned short const opCode, unsigned char *pProgramCounter, unsig
     *pProgramCounter += 2;
 }
 
-void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], unsigned short keyboardState[16])
+void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsigned char V[16], int keyboardState[16])
 {
     // Filter
     unsigned char Vx;
@@ -398,7 +398,8 @@ void LD_Vx_K(unsigned short const opCode, unsigned char *pProgramCounter, unsign
     printf("%04X - LD    V%u, K\n", opCode, Vx);
     // Op
     for (int i = 0; i < 16; i++) {
-        if (keyboardState[i]) {
+        if (keyboardState[i] == 1) {
+            printf("key ok %d\n", i);
             V[Vx] = i;
             i = 16;
             *pProgramCounter += 2;

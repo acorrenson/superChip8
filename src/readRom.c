@@ -61,7 +61,7 @@ void desasembler(unsigned short const opCode,
                  unsigned short *pStackPtr,
                  SDL_Renderer *renderer,
                  unsigned char screen[32][64],
-                 unsigned char keyBoardState[16],
+                 int keyBoardState[16],
                  unsigned char memory[4096],
                  unsigned short * pDelayTimer,
                  unsigned short * pSoundTimer)

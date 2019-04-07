@@ -117,29 +117,27 @@ void updateTimers(unsigned short * delayTimer, unsigned short * soundTimer)
     --*soundTimer;
 }
 
-void setKeyBoardState(const Uint8 * state, unsigned char keyBoardState[16])
+void setKeyBoardState(const Uint8 * state, int keyBoardState[16])
 {
   keyBoardState[1] = state[SDL_SCANCODE_1];
   keyBoardState[2] = state[SDL_SCANCODE_2];
   keyBoardState[3] = state[SDL_SCANCODE_3];
 
   keyBoardState[12] = state[SDL_SCANCODE_4];
-  
-  keyBoardState[4] = state[SDL_SCANCODE_Q];
-  keyBoardState[5] = state[SDL_SCANCODE_W];
-  keyBoardState[6] = state[SDL_SCANCODE_E];
-
   keyBoardState[13] = state[SDL_SCANCODE_R];
+  keyBoardState[14] = state[SDL_SCANCODE_F];
+  keyBoardState[15] = state[SDL_SCANCODE_V];
 
   keyBoardState[7] = state[SDL_SCANCODE_A];
   keyBoardState[8] = state[SDL_SCANCODE_S];
   keyBoardState[9] = state[SDL_SCANCODE_D];
 
-  keyBoardState[14] = state[SDL_SCANCODE_4];
-
   keyBoardState[10] = state[SDL_SCANCODE_Z];
   keyBoardState[0] = state[SDL_SCANCODE_X];
   keyBoardState[11] = state[SDL_SCANCODE_C];
 
-  keyBoardState[15] = state[SDL_SCANCODE_V];
+
+  keyBoardState[4] = state[SDL_SCANCODE_Q];
+  keyBoardState[5] = state[SDL_SCANCODE_W];
+  keyBoardState[6] = state[SDL_SCANCODE_E];
 }

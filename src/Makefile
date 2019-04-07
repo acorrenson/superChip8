@@ -5,10 +5,10 @@ lib_path_mac = /usr/local/Cellar/sdl2/2.0.9_1/lib/
 test: main
 	./main ../roms/15puzzle.rom
 
-auto_build:
+auto_build: main.c readRom.c instructions.c system.c
 	gcc main.c readRom.c instructions.c system.c -o main -l SDL2 -l m
 
-main: main.c readRom.c
+main: main.c readRom.c instructions.c system.c
 	gcc main.c readRom.c instructions.c system.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2 -l m
 
 clean:
