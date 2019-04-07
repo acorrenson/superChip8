@@ -53,8 +53,12 @@ void desasembler(unsigned short const opCode,
                  unsigned char V[16], 
                  unsigned short *pI, 
                  unsigned char stack[48], 
-                 unsigned short *pStackPtr, 
-                 SDL_Renderer *renderer)
+                 unsigned short *pStackPtr,
+                 SDL_Renderer *renderer,
+                 unsigned short keyBoardState[16],
+                 unsigned short memory[4096],
+                 unsigned short * pDelayTimer,
+                 unsigned short * pSoundTimer)
 {
   if(opCode == 0x00E0) {
     CLS(opCode);
