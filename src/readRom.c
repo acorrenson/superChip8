@@ -56,7 +56,7 @@ void desasembler(unsigned short const opCode)
     RET(opCode);
   }
   else if(opCode >> 12 == 0) {
-    printf("DEPRECATED SYS CALL : %04x", opCode);
+    printf("%04X - DEPRECATED SYS CALL\n", opCode);
   }
   else if(opCode >> 12 == 1) {
     JP_addr(opCode);

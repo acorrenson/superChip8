@@ -9,7 +9,7 @@ auto_build:
 	gcc main.c readRom.c instructions.c -o main -l SDL2
 
 main: main.c readRom.c
-	gcc main.c readRom.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2
+	gcc main.c readRom.c instructions.c -o main -I ${include_path} -L ${lib_path_mac} -l SDL2
 
 clean:
 	rm -rf main
