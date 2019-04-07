@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 #include "readRom.h"
+#include "instructions.h"
 
 // SYSTEM SPECIFICATIONS
 #define MEMORY_SIZE 4096
