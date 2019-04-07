@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "instructions.h"
 
 /**
  * @brief      Reads a rom file.
@@ -42,17 +43,6 @@ void printMemory(unsigned short * memory, int size)
 }
 
 /**
- * @brief      Pretty print an opCode and its assembly in stdin
- *
- * @param      instruction  The assembly instruction
- * @param[in]  opCode       The operation code
- */
-void printOpCode(char * instruction, unsigned short const opCode)
-{
-  printf("OP_CODE : \033[35m%04X\033[0m  |  ASEMBLY : \033[35m%s\033[0m\n", opCode, instruction);
-}
-
-/**
  * @brief      Convert an opCode into assembly
  *
  * @param[in]  opCode  The operation code
@@ -60,119 +50,110 @@ void printOpCode(char * instruction, unsigned short const opCode)
 void desasembler(unsigned short const opCode)
 {
   if(opCode == 0x00E0) {
-    printOpCode("CLS", opCode);
+    CLS(opCode);
   }
   else if(opCode == 0x00EE) {
-    printOpCode("RET", opCode);
+    RET(opCode);
   }
   else if(opCode >> 12 == 0) {
-    printOpCode("DEPRECATED SYS CALL", opCode);
+    printf("%04X - DEPRECATED SYS CALL\n", opCode);
   }
   else if(opCode >> 12 == 1) {
-    printOpCode("JP", opCode);
+    JP_addr(opCode);
   }
   else if(opCode >> 12 == 2) {
-    printOpCode("CALL", opCode);
+    CALL_addr(opCode);
   }
   else if(opCode >> 12 == 3) {
-    printOpCode("SKP", opCode);
+    SE_Vx_byte(opCode);
   }
   else if(opCode >> 12 == 4) {
-    printOpCode("SKP", opCode);
+    SNE_Vx_byte(opCode);
   }
   else if(opCode >> 12 == 5) {
-    printOpCode("SKP", opCode);
+    SE_Vx_Vy(opCode);
   }
   else if(opCode >> 12 == 6) {
-    printOpCode("SET", opCode);
+    LD_Vx_byte(opCode);
   }
   else if(opCode >> 12 == 7) {
-    printOpCode("ADD", opCode);
+    ADD_Vx_byte(opCode);
   }
   else if(opCode >> 12 == 8)
   {
     if ( (opCode & 0x0000) == 0) {
-      // LD Vx, Vy
-      printOpCode("LD", opCode);
+      LD_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0001) == 1) {
-      printOpCode("OR", opCode);
+      OR_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0002) == 2) {
-      printOpCode("AND", opCode);
+      AND_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0003) == 3) {
-      printOpCode("XOR", opCode);
+      XOR_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0004) == 4) {
-      printOpCode("ADD", opCode);
+      ADD_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0005) == 5) {
-      printOpCode("SUB", opCode);
+      SUB_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0006) == 6) {
-      printOpCode("SHR", opCode);
+      SHR_Vx(opCode);
     }
     else if ( (opCode & 0x0007) == 7) {
-      printOpCode("SUBN", opCode);
+      SUBN_Vx_Vy(opCode);
     }
     else if ( (opCode & 0x0008) == 8) {
-      printOpCode("SHL", opCode);
+      SHL_Vx(opCode);
     }
   }
   else if (opCode >> 12 == 9) {
-    printOpCode("SKP", opCode);
+    SNE_Vx_Vy(opCode);
   }
   else if (opCode >> 12 == 0xA) {
-    printOpCode("LD", opCode);
+    LD_I_addr(opCode);
   }
   else if (opCode >> 12 == 0xB) {
-    printOpCode("JP", opCode);
+    JP_V0_addr(opCode);
   }
   else if (opCode >> 12 == 0xC) {
-    printOpCode("RND", opCode);
+    RND_Vx_byte(opCode);
   }
   else if (opCode >> 12 == 0xD) {
-    printOpCode("DRW", opCode);
+    DRW_Vx_Vy_nibble(opCode);
   }
   else if (opCode >> 12 == 0xE)
   {
     if ( (opCode & 0x009E) ==  0x009E ) {
-      printOpCode("SKP", opCode);
+      SKP_Vx(opCode);
     }
     else if ( (opCode & 0x00A1) == 0x00A1 ) {
-      printOpCode("SKNP", opCode);
+      SKNP_Vx(opCode);
     }
   }
   else if (opCode >> 12 == 0xF ) {
     if ( (opCode & 0x0007) == 0x0007 ) {
-      printOpCode("LD", opCode);
+      LD_Vx_DT(opCode);
     } else if ( (opCode & 0x000A) == 0x000A ) {
-      // LD Vx, K
-      printOpCode("LD", opCode);
+      LD_Vx_K(opCode);
     } else if ( (opCode & 0x0015) == 0x0015 ) {
-      // LD DT, Vx
-      printOpCode("LD", opCode);
+      LD_DT_Vx(opCode);
     } else if ( (opCode & 0x0018) == 0x0018 ) {
-      // LD ST, Vx
-      printOpCode("LD", opCode);
+      LD_ST_Vx(opCode);
     } else if ( (opCode & 0x001E) == 0x001E ) {
-      // ADD I, Vx
-      printOpCode("ADD", opCode);
+      ADD_I_Vx(opCode);
     } else if ( (opCode & 0x0029) == 0x0029 ) {
-      // LD F, Vx
-      printOpCode("LD", opCode);
+      LD_F_Vx(opCode);
     } else if ( (opCode & 0x0033) == 0x0033 ) {
-      // LD B, Vx
-      printOpCode("LD", opCode);
+      LD_B_Vx(opCode);
     } else if ( (opCode & 0x0055) == 0x0055 ) {
-      // LD [I], Vx
-      printOpCode("LD", opCode);
+      LD_I_Vx(opCode);
     } else if ( (opCode & 0x0065) == 0x0065 ) {
-      // LD Vx, [I]
-      printOpCode("LD", opCode);
+      LD_Vx_I(opCode);
     }
   } else {
-    printOpCode("NOT FOUND", opCode);
+    printf("NOT FOUND : %04x", opCode);
   }
 }
