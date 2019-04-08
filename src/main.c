@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <time.h>
 #include <math.h>
 #include "readRom.h"
 #include "system.h"
@@ -54,6 +55,13 @@ int main(int argc, char const *argv[]) {
   FILE * f = fopen(argv[1], "rb");
   romSize = fread(&memory[0x200], 1, MAXSIZE, f);
   fclose(f);
+
+  printf("ROM size %d\n", romSize);
+
+  for (int i = 0; i < romSize; i+=2) {
+    unsigned short opc = (memory[0x200+i] << 8 ) | (memory[0x200+i+1]);
+    desasembler(opc, V, I, stack, stackPtr);
+  }
 
   int keyBoardState[16] =
     {0, 0 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -110,6 +118,7 @@ int main(int argc, char const *argv[]) {
   quit = 0;
   
   // -- MAIN PROGRAM --
+
   if ( pWindow ) {
     printf("Successfully created superChip8 window\n");
 
@@ -133,7 +142,7 @@ int main(int argc, char const *argv[]) {
       unsigned char y = (opCode & 0x00F0) >> 4;
       unsigned char n = opCode & 0x000F;
       unsigned short kk = opCode & 0x00FF;
-
+      
       if (opCode == 0x00E0){
         // CLS
         printf("%04X - CLS\n", opCode);
@@ -288,17 +297,17 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF000) == 0xC000) {
-        // RND_Vx_byte(opCode, pProgramCounter, V);
         printf("%04X - RND\n", opCode);
+        srand(time(0));
+        unsigned char r = rand() % 256;
+        V[x] = r & kk;
         PC += 2;
       }
       
       else if ((opCode & 0xF000) == 0xD000) {
-        printf("%04X - DRW %d\n", opCode, I);
-        if (I != 400) {
-          int col = sprite(screen, &memory[I], n, V[x], V[y]);
-          V[15] = col;
-        }
+        printf("%04X - DRW %d\n", opCode, I);        
+        int col = sprite(screen, &memory[I], n, V[x], V[y]);
+        V[15] = col;
         PC += 2;
       }
       
@@ -328,10 +337,11 @@ int main(int argc, char const *argv[]) {
         printf("%04X - LD_Vx_K\n", opCode);
         int pressed = 0;
         for (int i = 0; i < 16; i++) {
-          if (keyBoardState[i] == 1)
+          if (keyBoardState[i] == 1) {
             V[x] = i;
             pressed = 1;
             i = 16;
+          }
         }
 
         if (pressed)
@@ -383,6 +393,7 @@ int main(int argc, char const *argv[]) {
           V[x] = memory[I+x];
         PC += 2;
       }
+
       renderAll(renderer, screen);
       
       SDL_RenderPresent(renderer);

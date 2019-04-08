@@ -1,39 +1,4 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
-#include "instructions.h"
-
-
-unsigned short getOpCodeAt(unsigned char * memoryPtr, unsigned char programCounter)
-{
-  unsigned char firstHalf = memoryPtr[programCounter];
-  unsigned char secndHalf = memoryPtr[programCounter+1];
-  unsigned short opCode = (firstHalf << 8 | secndHalf);
-  return opCode;
-}
-
-/**
- * @brief      Reads a rom file.
- *
- * @param      memory  Pointer to the CHIP-8 memory
- * 
- * @return     Number of opCodes readen
- */
-int readRom(unsigned char * memory, char const * fileName)
-{
-  FILE * f = fopen(fileName, "r");
-
-  
-  int i = 0;
-
-  while(!feof(f)) {
-    memory[i] = fgetc(f);
-    i++;
-  }
-
-  fclose(f);
-
-  return i/2;
-}
 
 /**
  * @brief      Print the current state of the memory
@@ -53,124 +18,152 @@ void printMemory(unsigned char * memory, int size)
  *
  * @param[in]  opCode  The operation code
  */
-void desasembler(unsigned short const opCode, 
-                 unsigned char *pProgramCounter,
-                 unsigned char V[16], 
-                 unsigned short *pI, 
-                 unsigned char stack[48], 
-                 unsigned short *pStackPtr,
-                 SDL_Renderer *renderer,
-                 unsigned char screen[32][64],
-                 int keyBoardState[16],
-                 unsigned char memory[4096],
-                 unsigned short * pDelayTimer,
-                 unsigned short * pSoundTimer)
+void desasembler(unsigned short opCode, unsigned char V[16], unsigned short I, unsigned short stack[48], unsigned short stackPtr)
 {
-  if(opCode == 0x00E0) {
-    CLS(opCode, pProgramCounter, renderer, screen);
+
+  unsigned short nnn = opCode & 0x0FFF;
+  unsigned char x = (opCode & 0x0F00) >> 8;
+  unsigned char y = (opCode & 0x00F0) >> 4;
+  unsigned char n = opCode & 0x000F;
+  unsigned short kk = opCode & 0x00FF;
+
+  if (opCode == 0x00E0){
+    printf("%04X - CLS\n", opCode);
   }
-  else if(opCode == 0x00EE) {
-    RET(opCode, pProgramCounter, stack, pStackPtr);
+
+  else if (opCode == 0x00EE) {
+    printf("%04X - RET [nw PC = %d]\n", opCode, stack[stackPtr]);
   }
-  else if(opCode >> 12 == 0) {
+  
+  else if (opCode >> 12 == 0x0) {
     printf("%04X - DEPRECATED SYS CALL\n", opCode);
   }
-  else if(opCode >> 12 == 1) {
-    JP_addr(opCode, pProgramCounter);
+  
+  else if ((opCode & 0xF000) == 0x1000) {
+    printf("%04X - JP %d\n", opCode, nnn);
   }
-  else if(opCode >> 12 == 2) {
-    CALL_addr(opCode, pProgramCounter, stack, pStackPtr);
+  
+  else if ((opCode & 0xF000) == 0x2000) {
+    printf("%04X - CALL %d\n", opCode, nnn);
   }
-  else if(opCode >> 12 == 3) {
-    SE_Vx_byte(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF000) == 0x3000) {
+    printf("%04X - SE V%d (%d) %d\n", opCode, x, V[x], kk);
   }
-  else if(opCode >> 12 == 4) {
-    SNE_Vx_byte(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF000) == 0x4000) {
+    printf("%04X - SNE_Vx_byte\n", opCode);
   }
-  else if(opCode >> 12 == 5) {
-    SE_Vx_Vy(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF00F) == 0x5000) {
+    printf("%04X - SE V%d (%d) V%d (%d)\n", opCode, x, V[x], y, V[y]);
   }
-  else if(opCode >> 12 == 6) {
-    LD_Vx_byte(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF000) == 0x6000) {
+    printf("%04X - LD V%d (%d) %d\n", opCode, x, V[x], kk);
   }
-  else if(opCode >> 12 == 7) {
-    ADD_Vx_byte(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF000) == 0x7000) {
+    printf("%04X - ADD V%d (%d) %d\n", opCode, x, V[x], kk);
   }
-  else if(opCode >> 12 == 8)
-  {
-    if ( (opCode & 0x0000) == 0) {
-      LD_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0001) == 1) {
-      OR_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0002) == 2) {
-      AND_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0003) == 3) {
-      XOR_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0004) == 4) {
-      ADD_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0005) == 5) {
-      SUB_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0006) == 6) {
-      SHR_Vx(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0007) == 7) {
-      SUBN_Vx_Vy(opCode, pProgramCounter, V);
-    }
-    else if ( (opCode & 0x0008) == 8) {
-      SHL_Vx(opCode, pProgramCounter, V);
-    }
+
+  else if ((opCode & 0xF00F) == 0x8000) {
+    printf("%04X - LD V%d (%d) V%d %d\n", opCode, x, V[x], y, V[y]);
   }
-  else if (opCode >> 12 == 9) {
-    SNE_Vx_Vy(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF00F) == 0x8001) {
+    printf("%04X - OR_Vx_Vy\n", opCode);
   }
-  else if (opCode >> 12 == 0xA) {
-    LD_I_addr(opCode, pProgramCounter, pI);
+  
+  else if ((opCode & 0xF00F) == 0x8002) {
+    printf("%04X - AND_Vx_Vy\n", opCode);
   }
-  else if (opCode >> 12 == 0xB) {
-    JP_V0_addr(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF00F) == 0x8003) {
+    printf("%04X - XOR_Vx_Vy\n", opCode);
   }
-  else if (opCode >> 12 == 0xC) {
-    RND_Vx_byte(opCode, pProgramCounter, V);
+  
+  else if ((opCode & 0xF00F) == 0x8004) {
+    printf("%04X - ADD V%d (%d) V%d (%d) \n", opCode, x, V[x], y, V[y]);
   }
-  else if (opCode >> 12 == 0xD) {
-    DRW_Vx_Vy_nibble(opCode, pProgramCounter, V, pI, screen, memory);
+  
+  else if ((opCode & 0xF00F) == 0x8005) {
+    printf("%04X - SUB Vx - Vy\n", opCode);
   }
-  else if (opCode >> 12 == 0xE)
-  {
-    if ( (opCode & 0x009E) ==  0x009E ) {
-      SKP_Vx(opCode, pProgramCounter, V, keyBoardState);
-    }
-    else if ( (opCode & 0x00A1) == 0x00A1 ) {
-      SKNP_Vx(opCode, pProgramCounter, V, keyBoardState);
-    }
+  
+  else if ((opCode & 0xF00F) == 0x8006) {
+    printf("%04X - SHR Vx\n", opCode);
   }
-  else if (opCode >> 12 == 0xF ) {
-    if ( (opCode & 0x0007) == 0x0007 ) {
-      LD_Vx_DT(opCode, pProgramCounter, V, pDelayTimer);
-    } else if ( (opCode & 0x000A) == 0x000A ) {
-      LD_Vx_K(opCode, pProgramCounter, V, keyBoardState);
-    } else if ( (opCode & 0x0015) == 0x0015 ) {
-      LD_DT_Vx(opCode, pProgramCounter, V, pDelayTimer);
-    } else if ( (opCode & 0x0018) == 0x0018 ) {
-      LD_ST_Vx(opCode, pProgramCounter, V, pSoundTimer);
-    } else if ( (opCode & 0x001E) == 0x001E ) {
-      ADD_I_Vx(opCode, pProgramCounter, V, pI);
-    } else if ( (opCode & 0x0029) == 0x0029 ) {
-      LD_F_Vx(opCode, pProgramCounter, V, pI);
-    } else if ( (opCode & 0x0033) == 0x0033 ) {
-      LD_B_Vx(opCode, pProgramCounter, V, pI, memory);
-    } else if ( (opCode & 0x0055) == 0x0055 ) {
-      LD_I_Vx(opCode, pProgramCounter, V, pI, memory);
-    } else if ( (opCode & 0x0065) == 0x0065 ) {
-      LD_Vx_I(opCode, pProgramCounter, V, pI, memory);
-    }
-  } else {
-    printf("NOT FOUND : %04x", opCode);
+  
+  else if ((opCode & 0xF00F) == 0x8007) {
+    printf("%04X - SUNB Vx Vy\n", opCode);
+  }
+  
+  else if ((opCode & 0xF00F) == 0x800E) {
+    printf("%04X - SHL Vx\n", opCode);
+  }
+  
+  else if ((opCode & 0xF00F) == 0x9000) {
+    printf("%04X - SNE V%d (%d) V%d (%d)\n", opCode, x, V[x], y, V[y]);
+  }
+  
+  else if ((opCode & 0xF000) == 0xA000) {
+    printf("%04X - LD I %d [set I = %d]\n", opCode, nnn, nnn);
+  }
+  
+  else if ((opCode & 0xF000) == 0xB000) {
+    printf("%04X - JP V%d (%d)  + %d\n", opCode, x, V[x], nnn);
+  }
+  
+  else if ((opCode & 0xF000) == 0xC000) {
+    printf("%04X - RND\n", opCode);
+  }
+  
+  else if ((opCode & 0xF000) == 0xD000) {
+    printf("%04X - DRW %d\n", opCode, I);        
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xE09E) {
+    printf("%04X - SKP K\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xE0A1) {
+    printf("%04X - SKNP Vx\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF007) {
+    printf("%04X - LD_Vx_DT\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF00A) {
+    printf("%04X - LD_Vx_K\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF015) {
+    printf("%04X - LD_DT_Vx\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF018) {
+    printf("%04X - LD_ST_Vx\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF01E) {
+    printf("%04X - ADD I (%d) V%d (%d)\n", opCode, I, x, V[x]);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF029) {
+    printf("%04X - LD F V%d (%d) [set I to %d]\n", opCode, x, V[x], V[x]*5);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF033) {
+    printf("%04X - LD B\n", opCode);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF055) {
+    printf("%04X - LD I V%d (%d) [set mem %d-%d]\n", opCode, x, V[x], I, I+x);
+  }
+  
+  else if ((opCode & 0xF0FF) == 0xF065) {
+    printf("%04X - LD V%d (%d) I [set reg %d-%d]\n", opCode, x, V[x], 0, x);
   }
 }
