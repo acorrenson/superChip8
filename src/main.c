@@ -142,7 +142,7 @@ int main(int argc, char const *argv[]) {
       unsigned char y = (opCode & 0x00F0) >> 4;
       unsigned char n = opCode & 0x000F;
       unsigned short kk = opCode & 0x00FF;
-      
+
       if (opCode == 0x00E0){
         // CLS
         printf("%04X - CLS\n", opCode);
@@ -173,7 +173,7 @@ int main(int argc, char const *argv[]) {
       else if ((opCode & 0xF000) == 0x2000) {
         printf("%04X - CALL %d\n", opCode, nnn);
         ++stackPtr;
-        stack[stackPtr] = PC;
+        stack[stackPtr] = PC+2;
         PC = nnn;
       }
       
@@ -329,7 +329,7 @@ int main(int argc, char const *argv[]) {
       
       else if ((opCode & 0xF0FF) == 0xF007) {
         printf("%04X - LD_Vx_DT\n", opCode);
-        delayTimer = V[x];
+        V[x] = delayTimer;
         PC += 2;
       }
       
