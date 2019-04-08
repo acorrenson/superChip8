@@ -9,7 +9,7 @@ i = 512
 
 for l in lines:
     s += str(i) + " : " + l + "\n"
-    i += 1
+    i += 2
 
 f2.write(s)
 
