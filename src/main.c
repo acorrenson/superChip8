@@ -156,6 +156,7 @@ int main(int argc, char const *argv[]) {
         // RET
         printf("%04X - RET [nw PC = %d]\n", opCode, stack[stackPtr]);
         PC = stack[stackPtr];
+        stack[stackPtr] = 0;
         --stackPtr;
       }
       
@@ -165,7 +166,6 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF000) == 0x1000) {
-        // JP addr
         printf("%04X - JP %d\n", opCode, nnn);
         PC = nnn;
       }
