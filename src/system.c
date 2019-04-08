@@ -29,8 +29,8 @@ void point(SDL_Renderer * renderer, int x, int y)
 {
   // Draw a point to the screen
   SDL_Rect rect;
-  rect.x = (x+1)*SQW;
-  rect.y = (y+1)*SQH;
+  rect.x = (x)*SQW;
+  rect.y = (y)*SQH;
   rect.h = SQH;
   rect.w = SQW;
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -41,8 +41,8 @@ void erase(SDL_Renderer * renderer, int x, int y)
 {
   // Draw a point to the screen
   SDL_Rect rect;
-  rect.x = (x+1)*SQW;
-  rect.y = (y+1)*SQH;
+  rect.x = (x)*SQW;
+  rect.y = (y)*SQH;
   rect.h = SQH;
   rect.w = SQW;
   SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -57,9 +57,9 @@ void renderAll(SDL_Renderer *renderer, unsigned char screen[32][64])
     for (int j = 0; j < 64; ++j)
     {
       if (screen[i][j] == 1)
-        point(renderer, j+1, i+1);
+        point(renderer, j, i);
       else
-        erase(renderer, j+1, i+1);
+        erase(renderer, j, i);
     }
   }
 }
