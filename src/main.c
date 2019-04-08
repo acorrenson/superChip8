@@ -47,7 +47,7 @@ int main(int argc, char const *argv[]) {
   int quit = 0;
   int romSize;
 
-  FILE * f = fopen("/Users/arthur/Downloads/chip8-master/roms/brix.rom", "rb");
+  FILE * f = fopen(argv[1], "rb");
   romSize = fread(&memory[0x200], 1, MAXSIZE, f);
   fclose(f);
 
@@ -121,11 +121,8 @@ int main(int argc, char const *argv[]) {
         }
       }
       
-      setKeyBoardState(state, keyBoardState);
-      
+      setKeyBoardState(state, keyBoardState);      
       opCode = (memory[PC] << 8) | (memory[PC+1]);
-
-      printf("%04X\n", opCode);
 
       unsigned short nnn = opCode & 0x0FFF;
       unsigned char x = (opCode & 0x0F00) >> 8;
@@ -135,6 +132,7 @@ int main(int argc, char const *argv[]) {
 
       if (opCode == 0x00E0){
         // CLS
+        printf("%04X - CLS\n", opCode);
         for (int i = 0; i < 32; i++)
           for (int j = 0; j < 64; j++)
             screen[i][j] = 0;
@@ -143,8 +141,8 @@ int main(int argc, char const *argv[]) {
 
       else if (opCode == 0x00EE) {
         // RET
+        printf("%04X - RET [nw PC = %d]\n", opCode, stack[stackPtr]);
         PC = stack[stackPtr];
-        printf("ret to %d -> %04X\n", PC, memory[PC]);
         --stackPtr;
       }
       
@@ -155,73 +153,72 @@ int main(int argc, char const *argv[]) {
       
       else if ((opCode & 0xF000) == 0x1000) {
         // JP addr
-        // printf("JP to %04X\n", nnn);
+        printf("%04X - JP %d\n", opCode, nnn);
         PC = nnn;
       }
       
       else if ((opCode & 0xF000) == 0x2000) {
-        // CALL
+        printf("%04X - CALL %d\n", opCode, nnn);
         ++stackPtr;
-        printf("CALL to %d saving %d\n", nnn, PC);
         stack[stackPtr] = PC;
         PC = nnn;
       }
       
       else if ((opCode & 0xF000) == 0x3000) {
-        // SE_Vx_byte(opCode, pProgramCounter, V);
-        printf("V%d = %d, kk = %d\n", x, V[x], kk);
+        printf("%04X - SE V%d (%d) %d\n", opCode, x, V[x], kk);
         PC += V[x] == kk ? 4 : 2;
       }
       
       else if ((opCode & 0xF000) == 0x4000) {
         // SNE_Vx_byte(opCode, pProgramCounter, V);
+        printf("%04X - SNE_Vx_byte\n", opCode);
         PC += V[x] != kk ? 4 : 2;
       }
       
       else if ((opCode & 0xF00F) == 0x5000) {
-        // SE_Vx_Vy(opCode, pProgramCounter, V);
+        printf("%04X - SE V%d (%d) V%d (%d)\n", opCode, x, V[x], y, V[y]);
         PC += V[x] == V[y] ? 4 : 2;
       }
       
       else if ((opCode & 0xF000) == 0x6000) {
-        // LD_Vx_byte(opCode, pProgramCounter, V);
+        printf("%04X - LD V%d (%d) %d\n", opCode, x, V[x], kk);
         V[x] = kk;
         PC += 2;
       }
       
       else if ((opCode & 0xF000) == 0x7000) {
         // ADD Vx Byte
+        printf("%04X - ADD V%d (%d) %d\n", opCode, x, V[x], kk);
         V[x] += kk;
-        printf("V%u = %d\n", x, V[x]);
         PC += 2;
       }
         
       else if ((opCode & 0xF00F) == 0x8000) {
-        // LD_Vx_Vy(opCode, pProgramCounter, V);
+        printf("%04X - LD V%d (%d) V%d %d\n", opCode, x, V[x], y, V[y]);
         V[x] = V[y];
         PC += 2;
       }
       
       else if ((opCode & 0xF00F) == 0x8001) {
-        // OR Vx Vy
+        printf("%04X - OR_Vx_Vy\n", opCode);
         V[x] = V[x] | V[y];
         PC += 2;
       }
       
       else if ((opCode & 0xF00F) == 0x8002) {
-        // AND_Vx_Vy
+        printf("%04X - AND_Vx_Vy\n", opCode);
         V[x] = V[x] & V[y];
         PC += 2;
       }
       
       else if ((opCode & 0xF00F) == 0x8003) {
-        // XOR_Vx_Vy
+        printf("%04X - XOR_Vx_Vy\n", opCode);
         V[x] = V[x] ^ V[y];
         PC += 2;
       }
       
       else if ((opCode & 0xF00F) == 0x8004) {
-        // ADD_Vx_Vy
+        printf("%04X - ADD V%d (%d) V%d (%d) \n", opCode, x, V[x], y, V[y]);
         if ((int) V[x] + (int) V[y] > 255)
           V[15] = 1;
         else
@@ -231,6 +228,7 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF00F) == 0x8005) {
+        printf("%04X - SUB Vx - Vy\n", opCode);
         if (V[x] > V[y])
           V[15] = 1;
         else
@@ -240,7 +238,7 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF00F) == 0x8006) {
-        // SHR_Vx(opCode, pProgramCounter, V);
+        printf("%04X - SHR Vx\n", opCode);
         if (V[x] << 7 != 0)
           V[15] = 1;
         else
@@ -250,7 +248,7 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF00F) == 0x8007) {
-        // SUBN_Vx_Vy(opCode, pProgramCounter, V);
+        printf("%04X - SUNB Vx Vy\n", opCode);
         if (V[y] > V[x])
           V[15] = 1;
         else
@@ -260,7 +258,7 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF00F) == 0x800E) {
-        // SHL_Vx(opCode, pProgramCounter, V);
+        printf("%04X - SHL Vx\n", opCode);
         if (V[x] >> 7 == 0x1)
           V[15] = 1;
         else
@@ -270,54 +268,38 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF00F) == 0x9000) {
-        // SNE_Vx_Vy(opCode, pProgramCounter, V);
+        printf("%04X - SNE V%d (%d) V%d (%d)\n", opCode, x, V[x], y, V[y]);
         PC += V[x] != V[y] ? 4 : 2;
       }
       
       else if ((opCode & 0xF000) == 0xA000) {
-        // LD_I_addr(opCode, pProgramCounter, pI);
+        printf("%04X - LD I %d [set I = %d]\n", opCode, nnn, nnn);
         I = nnn;
         PC += 2;
       }
       
       else if ((opCode & 0xF000) == 0xB000) {
-        // JP_V0_addr(opCode, pProgramCounter, V);
+        printf("%04X - JP V%d (%d)  + %d\n", opCode, x, V[x], nnn);
         PC = V[0] + nnn;
       }
       
       else if ((opCode & 0xF000) == 0xC000) {
         // RND_Vx_byte(opCode, pProgramCounter, V);
+        printf("%04X - RND\n", opCode);
+        PC += 2;
       }
       
       else if ((opCode & 0xF000) == 0xD000) {
-        // DRW_Vx_Vy_nibble(opCode, pProgramCounter, V, pI, screen, memory);
-        printf("DRW %d pt at %d %d from %d\n", n, V[x], V[y], I);
-        int col = sprite(screen, &memory[I], n, V[x], V[y]);
-        // unsigned char test;
-        // unsigned char code;
-        // for (int i = 0; i < n; i++) {
-        //   printf("%04X\n", memory[I+i]);
-        //   for (int j = 7; j >= 0; j--) {
-        //     code = memory[I+i];
-        //     test = (unsigned char) pow(2, j);
-        //     if ( (code & test) ==  test ) {
-        //       if ( screen[(i + V[y])%32][(7 - j + V[x])%64] == 0 ) {
-        //         // printf("%d %d\n", (i + V[y])%32, (7 - j + V[x])%64);
-        //         screen[(i + V[y])%32][(7 - j + V[x])%64] = 1;
-        //       } else {
-        //         screen[(i + V[y])%32][(7 - j + V[x])%64] = 0;
-        //         col = 1;
-        //       }
-        //     }
-        //   }
-        // }
-        V[15] = col;
+        printf("%04X - DRW %d\n", opCode, I);
+        if (I != 400) {
+          int col = sprite(screen, &memory[I], n, V[x], V[y]);
+          V[15] = col;
+        }
         PC += 2;
-        printf("FIN DRW\n");
       }
       
       else if ((opCode & 0xF0FF) == 0xE09E) {
-        // SKP_Vx(opCode, pProgramCounter, V, keyBoardState);
+        printf("%04X - SKP K\n", opCode);
         if (keyBoardState[V[x]])
           PC += 4;
         else
@@ -325,7 +307,7 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF0FF) == 0xE0A1) {
-        // SKNP_Vx(opCode, pProgramCounter, V, keyBoardState);
+        printf("%04X - SKNP Vx\n", opCode);
         if (!keyBoardState[V[x]])
           PC += 4;
         else
@@ -333,13 +315,13 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF0FF) == 0xF007) {
-        // LD_Vx_DT(opCode, pProgramCounter, V, pDelayTimer);
+        printf("%04X - LD_Vx_DT\n", opCode);
         delayTimer = V[x];
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF00A) {
-        // LD_Vx_K(opCode, pProgramCounter, V, keyBoardState);
+        printf("%04X - LD_Vx_K\n", opCode);
         int pressed = 0;
         for (int i = 0; i < 16; i++) {
           if (keyBoardState[i] == 1)
@@ -353,32 +335,31 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF0FF) == 0xF015) {
-        // LD_DT_Vx(opCode, pProgramCounter, V, pDelayTimer);
+        printf("%04X - LD_DT_Vx\n", opCode);
         delayTimer = V[x];
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF018) {
-        // LD_ST_Vx(opCode, pProgramCounter, V, pSoundTimer);
+        printf("%04X - LD_ST_Vx\n", opCode);
         soundTimer = V[x];
         PC += 2; 
       }
       
       else if ((opCode & 0xF0FF) == 0xF01E) {
-        // ADD_I_Vx(opCode, pProgramCounter, V, pI);
+        printf("%04X - ADD I (%d) V%d (%d)\n", opCode, I, x, V[x]);
         I = I + V[x];
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF029) {
-        // LD_F_Vx(opCode, pProgramCounter, V, pI);
+        printf("%04X - LD F V%d (%d) [set I to %d]\n", opCode, x, V[x], V[x]*5);
         I = V[x] * 5;
-        printf("I -> to %03X\n", V[x]*5);
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF033) {
-        // LD_B_Vx(opCode, pProgramCounter, V, pI, memory);
+        printf("%04X - LD_B_Vx\n", opCode);
         memory[I] = V[x] / 100;
         memory[I+1] = (V[x] % 100) / 10;
         memory[I+2] = V[x] % 10;
@@ -386,14 +367,14 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF0FF) == 0xF055) {
-        // LD_I_Vx(opCode, pProgramCounter, V, pI, memory);
+        printf("%04X - LD I V%d (%d) [set mem %d-%d]\n", opCode, x, V[x], I, I+x);
         for(int i = 0; i < x; i++)
           memory[I+x] = V[x];
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF065) {
-        // LD_Vx_I(opCode, pProgramCounter, V, pI, memory);
+        printf("%04X - LD V%d (%d) I [set reg %d-%d]\n", opCode, x, V[x], 0, x);
         for(int i = 0; i < x; i++)
           V[x] = memory[I+x];
         PC += 2;
