@@ -401,7 +401,7 @@ int main(int argc, char const *argv[]) {
       updateTimers(&delayTimer, &soundTimer);
 
       // Read instructions at 60Hz
-      SDL_Delay(6);
+      SDL_Delay(2);
 
     }
   } else {
