@@ -36,13 +36,17 @@ int main(int argc, char const *argv[]) {
   unsigned short PC = 512;
   unsigned char V[16];
   unsigned short stack[48];
-  unsigned char stackPtr;
+  unsigned char stackPtr = 0;
 
-  unsigned short I;
+  unsigned short I = 0;
 
   unsigned short opCode;
-  unsigned short delayTimer;
-  unsigned short soundTimer;
+  unsigned short delayTimer = 0;
+  unsigned short soundTimer = 0;
+  
+  memset(memory, 0, sizeof(memory));
+  memset(V, 0, sizeof(V));
+  memset(stack, 0, sizeof(stack));
 
   int quit = 0;
   int romSize;
@@ -359,10 +363,10 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF0FF) == 0xF033) {
-        printf("%04X - LD_B_Vx\n", opCode);
-        memory[I] = V[x] / 100;
-        memory[I+1] = (V[x] % 100) / 10;
-        memory[I+2] = V[x] % 10;
+        printf("%04X - LD B\n", opCode);
+        memory[I]   = (V[x] % 1000) / 100; // hundred's digit
+        memory[I+1] = (V[x] % 100) / 10;   // ten's digit
+        memory[I+2] = (V[x] % 10); // one's digit
         PC += 2;
       }
       

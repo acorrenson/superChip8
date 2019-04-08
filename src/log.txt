@@ -1,10 +1,9 @@
-./main ../roms/15puzzle.rom
 Creating superChip8 window
 Successfully created superChip8 window
 6E05 - LD V14 (0) 5
-6500 - LD V5 (127) 0
-6B06 - LD V11 (220) 6
-6A00 - LD V10 (96) 0
+6500 - LD V5 (0) 0
+6B06 - LD V11 (0) 6
+6A00 - LD V10 (0) 0
 A30C - LD I 780 [set I = 780]
 DAB1 - DRW 780
 7A04 - ADD V10 (0) 4
@@ -501,122 +500,2834 @@ DAB1 - DRW 780
 3A40 - SE V10 (64) 64
 7B02 - ADD V11 (16) 2
 3B12 - SE V11 (18) 18
-6C20 - LD V12 (255) 32
-6D1F - LD V13 (127) 31
+6C20 - LD V12 (0) 32
+6D1F - LD V13 (0) 31
 A310 - LD I 784 [set I = 784]
 DCD1 - DRW 784
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
-F265 - LD V2 (75) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
-6337 - LD V3 (98) 55
-6400 - LD V4 (255) 0
-D345 - DRW 400
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (0) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
 6400 - LD V4 (0) 0
-D345 - DRW 400
+D345 - DRW 0
 7305 - ADD V3 (55) 5
 F229 - LD F V2 (0) [set I to 0]
 D345 - DRW 0
 00EE - RET [nw PC = 544]
 22F6 - CALL 758
 A314 - LD I 788 [set I = 788]
+F533 - LD B
 F265 - LD V2 (0) I [set reg 0-2]
-F129 - LD F V1 (80) [set I to 400]
+F129 - LD F V1 (0) [set I to 0]
 6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
+D345 - DRW 0
+7305 - ADD V3 (55) 5
+F229 - LD F V2 (0) [set I to 0]
+D345 - DRW 0
+00EE - RET [nw PC = 544]
+22F6 - CALL 758
+A314 - LD I 788 [set I = 788]
+F533 - LD B
+F265 - LD V2 (0) I [set reg 0-2]
+F129 - LD F V1 (0) [set I to 0]
+6337 - LD V3 (60) 55
+6400 - LD V4 (0) 0
