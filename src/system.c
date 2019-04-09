@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include "system.h"
 
+
 void clearScreen(SDL_Renderer * renderer, unsigned char screen[32][64])
 {
   for (int i = 0; i < 32; i++)
@@ -50,6 +51,12 @@ void erase(SDL_Renderer * renderer, int x, int y)
 }
 
 
+/**
+ * @brief      Redraw the screen
+ *
+ * @param      renderer  The sdl-renderer
+ * @param      screen    The screen
+ */
 void renderAll(SDL_Renderer *renderer, unsigned char screen[32][64])
 {
   for (int i = 0; i < 32; ++i)
@@ -62,6 +69,41 @@ void renderAll(SDL_Renderer *renderer, unsigned char screen[32][64])
         erase(renderer, j, i);
     }
   }
+}
+
+
+/**
+ * @brief      Display a sprite to the screen
+ *
+ * @param      screen  The screen
+ * @param      buff    The buffer
+ * @param[in]  size    The size
+ * @param[in]  x       x position
+ * @param[in]  y       y position
+ *
+ * @return     If there is a collision with an other sprite, return 1
+ */
+int sprite(unsigned char screen[32][64],
+  unsigned char buff[], int size, int x, int y)
+{
+  int col;
+  unsigned char test;
+  unsigned char code;
+  for (int i = 0; i < size; i++) {
+    for (int j = 7; j >= 0; j--) {
+      code = buff[i];
+      test = (unsigned char) pow(2, j);
+      if ( (code & test) ==  test ) {
+        if ( screen[(i + y)%32][(7 - j + x)%64] == 0 ) {
+          screen[(i + y)%32][(7 - j + x)%64] = 1;
+        } else {
+          screen[(i + y)%32][(7 - j + x)%64] = 0;
+          col = 1;
+        }
+      }
+    }
+  }
+  return col;
 }
 
 
@@ -117,6 +159,12 @@ void updateTimers(unsigned short * delayTimer, unsigned short * soundTimer)
     --*soundTimer;
 }
 
+/**
+ * @brief      Sets the key board state.
+ *
+ * @param[in]  state          The SDL keyboard state
+ * @param      keyBoardState  The chip8 keyboard state
+ */
 void setKeyBoardState(const Uint8 * state, int keyBoardState[16])
 {
   keyBoardState[1] = state[SDL_SCANCODE_1];

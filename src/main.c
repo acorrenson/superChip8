@@ -3,32 +3,9 @@
 #include <SDL2/SDL.h>
 #include <time.h>
 #include <math.h>
-#include "readRom.h"
+#include "utils.h"
 #include "system.h"
-#define MAXSIZE 0X10000 - 0x200
 
-int sprite(unsigned char screen[32][64],
-  unsigned char buff[], int size, int x, int y)
-{
-  int col;
-  unsigned char test;
-  unsigned char code;
-  for (int i = 0; i < size; i++) {
-    for (int j = 7; j >= 0; j--) {
-      code = buff[i];
-      test = (unsigned char) pow(2, j);
-      if ( (code & test) ==  test ) {
-        if ( screen[(i + y)%32][(7 - j + x)%64] == 0 ) {
-          screen[(i + y)%32][(7 - j + x)%64] = 1;
-        } else {
-          screen[(i + y)%32][(7 - j + x)%64] = 0;
-          col = 1;
-        }
-      }
-    }
-  }
-  return col;
-}
 
 int main(int argc, char const *argv[]) {
   
