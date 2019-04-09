@@ -160,7 +160,6 @@ int main(int argc, char const *argv[]) {
       }
       
       else if ((opCode & 0xF000) == 0x4000) {
-        // SNE_Vx_byte(opCode, pProgramCounter, V);
         printf("%04X - SNE_Vx_byte\n", opCode);
         PC += V[x] != kk ? 4 : 2;
       }
@@ -359,15 +358,15 @@ int main(int argc, char const *argv[]) {
       
       else if ((opCode & 0xF0FF) == 0xF055) {
         printf("%04X - LD I V%d (%d) [set mem %d-%d]\n", opCode, x, V[x], I, I+x);
-        for(int i = 0; i < x; i++)
-          memory[I+x] = V[x];
+        for(int i = 0; i <= x; i++)
+          memory[I+i] = V[i];
         PC += 2;
       }
       
       else if ((opCode & 0xF0FF) == 0xF065) {
         printf("%04X - LD V%d (%d) I [set reg %d-%d]\n", opCode, x, V[x], 0, x);
-        for(int i = 0; i < x; i++)
-          V[x] = memory[I+x];
+        for(int i = 0; i <= x; i++)
+          V[i] = memory[I+i];
         PC += 2;
       }
 
