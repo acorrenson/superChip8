@@ -1,4 +1,20 @@
 #include <stdio.h>
+#include <stdarg.h>
+#define PRINT 0
+
+/**
+ * @brief      Optionnaly print a message (or not)
+ *
+ * @param      fmt        The format
+ * @param[in]  Variables to print
+ */
+void p(char * fmt, ...) {
+  va_list va;
+  va_start(va, fmt);
+  if(PRINT)
+    vprintf(fmt, va);
+  va_end(va);
+}
 
 /**
  * @brief      Print the current state of the memory
