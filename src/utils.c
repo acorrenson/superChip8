@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#define PRINT 0
+#define PRINT 1
 
 /**
  * @brief      Optionnaly print a message (or not)
