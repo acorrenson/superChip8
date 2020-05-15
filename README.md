@@ -1,12 +1,12 @@
 # superChip8
 
-an emulator for the chip-8 system written in C
+An emulator for the chip-8 system written in C
 
-# Note
+# Installing
 
-You need to install SDL2 in order to compile the superChip8
+You need to install SDL2 in order to compile the superChip8.
 
-# Usefull cmd
+## Usefull commands
 
 ```shell
 # to build
